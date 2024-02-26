@@ -10,8 +10,8 @@ def resize_clip(clip, target_height):
     return clip.resize((target_width,target_height))
 
 #load the two video clips which are to be combined
-clip1 = VideoFileClip('Videos/YourRage reacts to xQc reacting to him Pulling Gun out for Intruder (720p60).mp4').subclip(10,25)
-clip2 = VideoFileClip('Videos/GTA 5 NO COPYRIGHT GAMEPLAY for TikTok & YouTube _ FREE TO USE _ 4K 60FPS _ 371 (720p60) - Trim.mp4', audio=False).subclip(10,25)
+clip1 = VideoFileClip('Videos/YourRage reacts to xQc reacting to him Pulling Gun out for Intruder (720p60).mp4').subclip(10,20)
+clip2 = VideoFileClip('Videos/GTA 5 NO COPYRIGHT GAMEPLAY for TikTok & YouTube _ FREE TO USE _ 4K 60FPS _ 371 (720p60) - Trim.mp4', audio=False).subclip(10,20)
 
 #extract the audio from clip1
 clip1.audio.write_audiofile("combined_audio.wav")
@@ -54,7 +54,7 @@ f.write(subtitles)
 f.close()
 
 #generate the subtitles to be shown on screen
-generator = lambda txt: TextClip(txt, font="Arial-Bold", fontsize=50, color = "white", method = 'caption', stroke_width=25, size=combined_clip.size)
+generator = lambda txt: TextClip(txt, font="Arial-Bold", fontsize=50, color = "white", method = 'caption', stroke_width=2, stroke_color='black', size=combined_clip.size)
 sub_clip = SubtitlesClip('Auto-Content-Creator/subtitles.src',generator)
 
 
